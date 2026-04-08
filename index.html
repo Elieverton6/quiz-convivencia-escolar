@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conscientização sobre Bullying e Cyberbullying — Escola Erundina Negreiros — GRE Recife Norte</title>
+  <title>Convivência Escolar 2026 - Escola Erundina Negreiros — GRE Recife Norte</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div class="stage">
-    <header>
-      <div class="brand-group">
-        <div class="title-wrap">
-          <h1>CONSCIENTIZAÇÃO SOBRE BULLYING E CYBERBULLYING</h1>
-          <p>Escola Erundina Negreiros — GRE Recife Norte</p>
-          <p>Profª. Ana Karla | Profº. Valdeck Francisco</p>
-          <p>GRE Recife Norte 2026</p>
-          <p>Psicóloga: Magui</p>
-        </div>
+  <header>
+    <div class="brand-group">
+      <div class="title-wrap">
+        <h1>CONVIVÊNCIA ESCOLAR 2026</h1>
+
+        <p>Escola Erundina Negreiros — GRE Recife Norte</p>
+
+        <p>Prof. Valdeck Francisco</p>
       </div>
-    </header>
+    </div>
+  </header>
 
     <div id="quiz-box" class="slide-card">
 
@@ -30,17 +30,25 @@
       </div>
 
       <h3 id="question-counter"></h3>
+
       <h2 id="question"></h2>
+
       <ul id="options" class="bullets"></ul>
 
-      <button id="next-btn" class="btn">Próxima</button>
+      <button id="next-btn" class="btn">
+        Próxima
+      </button>
 
     </div>
 
+
     <div id="result-box" class="slide-card hidden">
+
       <h2>🎉 Resultado Final</h2>
+
       <p class="result-score">
-        Você acertou <strong><span id="score"></span></strong> de
+        Você acertou
+        <strong><span id="score"></span></strong> de
         <strong><span id="total"></span></strong> questões
       </p>
 
@@ -51,7 +59,10 @@
       <p id="result-percent"></p>
       <p id="result-message"></p>
 
-      <button id="restart-btn" class="btn secondary">Jogar Novamente</button>
+      <button id="restart-btn" class="btn secondary">
+        Jogar Novamente
+      </button>
+
     </div>
 
   </div>
@@ -59,404 +70,204 @@
   <script>
     const questions = [
       {
-        question: `01. Lucas é constantemente apelidado pelos colegas devido ao seu peso. Ele já pediu para pararem, mas as piadas continuam todos os dias no recreio. Essa situação caracteriza bullying porque:`,
-        options: [
-          "É uma brincadeira comum entre adolescentes.",
-          "Apresenta repetição, intenção de ferir e desequilíbrio de poder.",
-          "Lucas deveria aprender a não ligar para apelidos.",
-          "Só seria bullying se houvesse agressão física."
-        ],
-        answer: 1
+        question: `01. A escola possui uma regra que proíbe o uso de celulares durante as provas. Se um aluno decide usar o aparelho escondido, ele está cometendo uma:` ,
+        options: ["Incivilidade", "Violência", "Indisciplina", "Transgressão"],
+        answer: 3
       },
       {
-        question: `02. Qual é a principal diferença entre o bullying "tradicional" e o cyberbullying?`,
-        options: [
-          "O cyberbullying é menos grave pois não envolve contato físico.",
-          "O bullying acontece apenas na escola, e o cyberbullying apenas em casa.",
-          "O cyberbullying permite que a agressão se espalhe rapidamente e alcance a vítima 24h por dia.",
-          "Não há diferença; os termos são sinônimos perfeitos."
-        ],
-        answer: 2
-      },
-      {
-        question: `03. Uma característica marcante do cyberbullying é o "anonimato aparente". Isso significa que:`,
-        options: [
-          "O agressor nunca pode ser descoberto pela polícia.",
-          "O agressor se sente protegido por estar atrás de uma tela, o que pode aumentar a agressividade.",
-          "A vítima prefere não saber quem é o agressor.",
-          "As redes sociais proíbem o uso de nomes reais."
-        ],
-        answer: 1
-      },
-      {
-        question: `04. Ao presenciar um colega sendo ridicularizado em um grupo de WhatsApp, a atitude mais ética do espectador seria:`,
-        options: [
-          "Sair do grupo e fingir que não viu nada.",
-          "Rir e enviar emojis para mostrar que é apenas uma brincadeira.",
-          "Apoiar a vítima no privado e denunciar o comportamento abusivo aos responsáveis.",
-          "Tirar um print e postar em suas próprias redes sociais para expor o agressor."
-        ],
-        answer: 2
-      },
-      {
-        question: `05. O termo "Exclusão Social" no contexto do bullying refere-se a:`,
-        options: [
-          "Mudar de escola por vontade própria.",
-          "Isolar a vítima propositalmente de atividades em grupo ou círculos de amizade.",
-          "Faltar às aulas para estudar em casa.",
-          "Não ter internet para acessar as redes sociais."
-        ],
-        answer: 1
-      },
-      {
-        question: `06. Sobre as consequências psicológicas para quem sofre bullying, é correto afirmar que:`,
-        options: [
-          "Fortalece a personalidade da vítima para o futuro.",
-          "Não causa impactos a longo prazo se a pessoa for \"forte\".",
-          "Pode causar ansiedade, depressão, queda no rendimento escolar e isolamento.",
-          "Afeta apenas crianças pequenas; adolescentes não sofrem com isso."
-        ],
-        answer: 2
-      },
-      {
-        question: `07. No Brasil, o bullying é tratado por qual legislação específica?`,
-        options: [
-          "Lei Maria da Penha.",
-          "Lei nº 13.185/2015 (Programa de Combate à Intimidação Sistemática).",
-          "Estatuto do Idoso.",
-          "Código de Trânsito Brasileiro."
-        ],
-        answer: 1
-      },
-      {
-        question: `08. O que caracteriza o comportamento do "espectador" no bullying?`,
-        options: [
-          "É a pessoa que sofre as agressões.",
-          "É quem planeja os ataques.",
-          "É quem presencia a agressão, podendo apoiar, defender a vítima ou omitir-se.",
-          "É o professor que media o conflito."
-        ],
-        answer: 2
-      },
-      {
-        question: `09. Uma foto comprometedora de uma aluna foi compartilhada sem autorização. Esse ato de cyberbullying pode ser enquadrado como:`,
-        options: [
-          "Liberdade de expressão.",
-          "Crime contra a honra e violação de privacidade.",
-          "Apenas um erro de conduta escolar, sem implicações legais.",
-          "Direito de quem tirou a foto."
-        ],
-        answer: 1
-      },
-      {
-        question: `10. O "Grooming" é um perigo digital que muitas vezes começa como cyberbullying. Ele consiste em:`,
-        options: [
-          "Criar perfis falsos para ganhar seguidores.",
-          "A estratégia de um adulto para ganhar a confiança de um menor com fins de abuso.",
-          "Postar fotos de animais de estimação.",
-          "Jogar games online por muitas horas."
-        ],
-        answer: 1
-      },
-      {
-        question: `11. Qual destes sentimentos é mais comum no agressor (bully)?`,
-        options: [
-          "Empatia profunda pelo próximo.",
-          "Necessidade de autoafirmação e domínio sobre o outro.",
-          "Desejo de ajudar os colegas a melhorarem.",
-          "Timidez excessiva em público."
-        ],
-        answer: 1
-      },
-      {
-        question: `12. O bullying verbal inclui:`,
-        options: [
-          "Empurrões e chutes.",
-          "Roubo de lanches e materiais.",
-          "Insultos, apelidos pejorativos e espalhar rumores falsos.",
-          "Ignorar a presença da pessoa no ambiente."
-        ],
-        answer: 2
-      },
-      {
-        question: `13. Por que o cyberbullying pode ser considerado mais "invasivo" que o bullying físico?`,
-        options: [
-          "Porque as telas de celular emitem luz azul.",
-          "Porque a vítima não tem um \"refúgio seguro\", já que as mensagens chegam em qualquer lugar.",
-          "Porque é impossível apagar qualquer coisa da internet.",
-          "Porque as operadoras de celular cobram caro pelas mensagens."
-        ],
-        answer: 1
-      },
-      {
-        question: `14. Qual a melhor forma de uma escola prevenir o bullying?`,
-        options: [
-          "Punir severamente apenas os alunos que reclamam muito.",
-          "Ignorar os casos pequenos para não dar importância ao agressor.",
-          "Promover a cultura do respeito, empatia e canais de denúncia seguros.",
-          "Proibir o uso de qualquer tecnologia dentro da escola."
-        ],
-        answer: 2
-      },
-      {
-        question: `15. Se você for vítima de cyberbullying, o primeiro passo recomendado é:`,
-        options: [
-          "Apagar todas as mensagens e fotos imediatamente.",
-          "Responder ao agressor com insultos ainda piores.",
-          "Salvar as evidências (prints) e buscar ajuda de um adulto de confiança.",
-          "Desligar a internet e nunca mais usar redes sociais."
-        ],
-        answer: 2
-      },
-      {
-        question: `16. O bullying psicológico pode ser identificado por:`,
-        options: [
-          "Marcas roxas no corpo.",
-          "Chantagens, manipulação e ameaças veladas.",
-          "Roupa rasgada após o intervalo.",
-          "Perda de objetos pessoais."
-        ],
-        answer: 1
-      },
-      {
-        question: `17. O que é "Flaming" no contexto do cyberbullying?`,
-        options: [
-          "Enviar mensagens de carinho para amigos.",
-          "Troca de insultos hostis em fóruns ou comentários públicos para humilhar alguém.",
-          "Postar fotos de paisagens.",
-          "Denunciar perfis falsos para a plataforma."
-        ],
-        answer: 1
-      },
-      {
-        question: `18. Ser empático significa:`,
-        options: [
-          "Concordar com tudo o que as pessoas dizem.",
-          "Tentar compreender e sentir o que o outro sente, colocando-se no lugar dele.",
-          "Dar dinheiro para quem precisa.",
-          "Ser o aluno mais popular da sala."
-        ],
-        answer: 1
-      },
-      {
-        question: `19. O "Cyberstalking" refere-se a:`,
-        options: [
-          "Comprar seguidores em redes sociais.",
-          "Perseguição obsessiva e persistente de alguém através da internet.",
-          "Postar muitas \"selfies\" no perfil pessoal.",
-          "Criar um blog sobre culinária."
-        ],
-        answer: 1
-      },
-      {
-        question: `20. Qual o papel da família ao descobrir que o filho está praticando bullying?`,
-        options: [
-          "Negar o fato, pois \"seu filho não faria isso\".",
-          "Incentivar o comportamento para que ele seja um \"líder\".",
-          "Dialogar, entender os motivos e responsabilizá-lo, buscando ajuda se necessário.",
-          "Retirar o filho da escola imediatamente sem conversar."
-        ],
-        answer: 2
-      },
-      {
-        question: `21. João sempre chama um colega por apelidos ofensivos na frente da turma. Essa situação é:`,
-        options: [
-          "Brincadeira saudável",
-          "Bullying",
-          "Amizade",
-          "Ajuda"
-        ],
-        answer: 1
-      },
-      {
-        question: `22. Uma aluna cria um perfil falso para zombar de outra pessoa na internet. Isso é:`,
-        options: [
-          "Brincadeira",
-          "Cyberbullying",
-          "Comunicação",
-          "Respeito"
-        ],
-        answer: 1
-      },
-      {
-        question: `23. Quando uma pessoa sofre bullying, ela pode sentir:`,
-        options: [
-          "Alegria",
-          "Indiferença",
-          "Tristeza e medo",
-          "Diversão"
-        ],
-        answer: 2
-      },
-      {
-        question: `24. Um grupo exclui propositalmente um colega das atividades. Isso é:`,
-        options: [
-          "Organização",
-          "Bullying",
-          "Liderança",
-          "Disciplina"
-        ],
-        answer: 1
-      },
-      {
-        question: `25. Compartilhar fotos de alguém sem permissão para ridicularizar é:`,
-        options: [
-          "Legal",
-          "Cyberbullying",
-          "Amizade",
-          "Ajuda"
-        ],
-        answer: 1
-      },
-      {
-        question: `26. O bullying geralmente acontece:`,
-        options: [
-          "Uma única vez",
-          "De forma repetitiva",
-          "Sem intenção",
-          "Por acidente"
-        ],
-        answer: 1
-      },
-      {
-        question: `27. Quando alguém presencia bullying, deve:`,
-        options: [
-          "Ignorar",
-          "Incentivar",
-          "Ajudar ou comunicar a um adulto",
-          "Rir junto"
-        ],
-        answer: 2
-      },
-      {
-        question: `28. Enviar mensagens ofensivas por celular é exemplo de:`,
-        options: [
-          "Educação",
-          "Cyberbullying",
-          "Comunicação normal",
-          "Ajuda"
-        ],
-        answer: 1
-      },
-      {
-        question: `29. O respeito entre colegas ajuda a:`,
-        options: [
-          "Aumentar conflitos",
-          "Evitar bullying",
-          "Criar problemas",
-          "Separar pessoas"
-        ],
-        answer: 1
-      },
-      {
-        question: `30. Fazer ameaças a um colega caracteriza:`,
-        options: [
-          "Brincadeira",
-          "Violência/Bullying",
-          "Amizade",
-          "Educação"
-        ],
-        answer: 1
-      },
-      {
-        question: `31. Um aluno espalha boatos sobre outro na escola. Isso é:`,
-        options: [
-          "Informação",
-          "Bullying",
-          "Comunicação",
-          "Ajuda"
-        ],
-        answer: 1
-      },
-      {
-        question: `32. Criar memes ofensivos sobre alguém na internet é:`,
-        options: [
-          "Humor saudável",
-          "Cyberbullying",
-          "Criatividade",
-          "Informação"
-        ],
-        answer: 1
-      },
-      {
-        question: `33. A vítima de bullying deve:`,
-        options: [
-          "Ficar calada",
-          "Procurar ajuda",
-          "Revidar com violência",
-          "Ignorar sempre"
-        ],
-        answer: 1
-      },
-      {
-        question: `34. O bullying pode causar:`,
-        options: [
-          "Apenas risadas",
-          "Problemas emocionais",
-          "Apenas diversão",
-          "Nenhum efeito"
-        ],
-        answer: 1
-      },
-      {
-        question: `35. Respeitar as diferenças significa:`,
-        options: [
-          "Julgar os outros",
-          "Aceitar e conviver bem",
-          "Excluir pessoas",
-          "Criticar sempre"
-        ],
-        answer: 1
-      },
-      {
-        question: `36. Enviar mensagens repetidas humilhando alguém é:`,
-        options: [
-          "Amizade",
-          "Cyberbullying",
-          "Comunicação",
-          "Ajuda"
-        ],
-        answer: 1
-      },
-      {
-        question: `37. Um ambiente escolar saudável é aquele onde:`,
-        options: [
-          "Há respeito",
-          "Há brigas",
-          "Há exclusão",
-          "Há medo"
-        ],
+        question: `02. Ao passar pelo corredor, um estudante deixa lixo no chão e não responde ao "bom dia" do funcionário da limpeza. Esse comportamento é um exemplo de:` ,
+        options: ["Incivilidade", "Violência", "Indisciplina", "Transgressão"],
         answer: 0
       },
       {
-        question: `38. Filmar agressões e divulgar na internet é:`,
-        options: [
-          "Diversão",
-          "Cyberbullying",
-          "Informação",
-          "Ajuda"
-        ],
+        question: `03. Durante a explicação do professor, um aluno insiste em conversar alto e ignorar as regras da sala. Essa atitude é considerada:` ,
+        options: ["Indisciplina", "Violência", "Incivilidade", "Bullying/Cyberbullying"],
+        answer: 0
+      },
+      {
+        question: `04. Qual das atitudes abaixo melhor define a incivilidade no ambiente escolar?`,
+        options: ["Agredir um colega fisicamente.", "Interromper a fala de outros com deboche ou grosseria.", "Chegar atrasado em todas as aulas.", "Criar perfis falsos na internet."],
         answer: 1
       },
       {
-        question: `39. Denunciar casos de bullying é importante porque:`,
-        options: [
-          "Piora a situação",
-          "Ajuda a resolver o problema",
-          "Não muda nada",
-          "Cria mais conflitos"
-        ],
+        question: `05. Criar um grupo em uma rede social apenas para postar figurinhas ofensivas e montagens de um colega da turma é:` ,
+        options: ["Indisciplina virtual.", "Cyberbullying.", "Incivilidade digital.", "Transgressão de horário."],
         answer: 1
       },
       {
-        question: `40. O bullying e o cyberbullying devem ser:`,
-        options: [
-          "Incentivados",
-          "Ignorados",
-          "Combatidos",
-          "Aceitos"
-        ],
+        question: `06. Para que uma agressão seja considerada Bullying, ela precisa apresentar quais características?`,
+        options: ["Ser rápida, sem intenção e entre amigos.", "Ocorrer apenas uma vez e de forma pública.", "Ser intencional, repetitiva e com desequilíbrio de poder.", "Ser física, com danos materiais e sem testemunhas."],
         answer: 2
+      },
+      {
+        question: `07. O aluno que sofre apelidos pejorativos diários e se sente humilhado, mas não reage por medo, é vítima de:` ,
+        options: ["Bullying.", "Transgressão.", "Indisciplina.", "Incivilidade pontual."],
+        answer: 0
+      },
+      {
+        question: `08. Quando um conflito entre dois estudantes deixa de ser verbal e passa para empurrões e socos, ocorre um episódio de:` ,
+        options: ["Indisciplina grave.", "Incivilidade crônica.", "Violência física.", "Transgressão de normas."],
+        answer: 2
+      },
+      {
+        question: `09. A violência psicológica na escola pode ser identificada quando:` ,
+        options: ["Um aluno quebra o patrimônio escolar.", "Um aluno é isolado, ameaçado ou excluído de propósito.", "A turma inteira conversa durante a prova", "O professor aplica uma regra que o aluno não gosta."],
+        answer: 1
+      },
+      {
+        question: `10. Qual é a estratégia mais eficaz para melhorar a convivência escolar diante desses problemas?`,
+        options: ["Punir severamente apenas os alunos indisciplinados.", "Ignorar os conflitos menores para evitar brigas.", "Promover o diálogo, o respeito e o cumprimento de regras coletivas.", "Proibir qualquer interação entre os alunos nos corredores."],
+        answer: 2
+      },
+      {
+        question: `11. Atitudes que atrapalham o andamento da aula, como conversar excessivamente ou não cumprir orientações do professor. Significa um ato de:` ,
+        options: ["Violência", "Indisciplina", "Bullying", "Transgressão"],
+        answer: 1
+      },
+      {
+        question: `12. Agressões físicas ou psicológicas que causam dano ou sofrimento a outra pessoa. Significa um ato de:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Transgressão"],
+        answer: 2
+      },
+      {
+        question: `13. Falta de respeito ou atitudes grosseiras que ferem a boa convivência entre as pessoas. Significa um ato de:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Transgressão"],
+        answer: 1
+      },
+      {
+        question: `14. Ato de desrespeitar regras ou normas estabelecidas pela escola. Significa um ato de:` ,
+        options: ["Incivilidade", "Violência", "Transgressão", "Bullying/Cyberbullying"],
+        answer: 2
+      },
+      {
+        question: `15. Comportamentos repetitivos de humilhação, intimidação ou exposição de alguém, podendo ocorrer também nas redes sociais. Significa um ato de:` ,
+        options: ["Indisciplina", "Violência", "Transgressão", "Bullying/Cyberbullying"],
+        answer: 3
+      },
+      {
+        question: `16. Durante a explicação do professor, alguns alunos conversam alto, mexem no celular e não realizam as atividades solicitadas, atrapalhando o andamento da aula. Esse comportamento caracteriza:` ,
+        options: ["Violência", "Indisciplina", "Bullying", "Transgressão"],
+        answer: 1
+      },
+      {
+        question: `17. No intervalo, um aluno chama o colega por apelidos desagradáveis e faz comentários desrespeitosos na frente de outros estudantes. Esse tipo de comportamento pode ser classificado como:` ,
+        options: ["Incivilidade", "Violência", "Indisciplina", "Transgressão"],
+        answer: 0
+      },
+      {
+        question: `18. Dois alunos começam uma discussão no pátio da escola e acabam trocando empurrões e socos. Essa situação caracteriza:` ,
+        options: ["Incivilidade", "Bullying", "Violência", "Indisciplina"],
+        answer: 2
+      },
+      {
+        question: `19. Um estudante sai da sala de aula sem autorização do professor e circula pela escola, desrespeitando as regras estabelecidas pela instituição. Esse comportamento é considerado:` ,
+        options: ["Bullying", "Transgressão", "Violência", "Incivilidade"],
+        answer: 1
+      },
+      {
+        question: `20. Um grupo de alunos cria um perfil em uma rede social para publicar mensagens e imagens ridicularizando repetidamente um colega da escola. Essa prática é chamada de:` ,
+        options: ["Incivilidade", "Indisciplina", "Bullying/Cyberbullying", "Transgressão"],
+        answer: 2
+      },
+      {
+        question: `21. Valdeck Francisco é professor de matemática e Física. Ele ministra aulas em várias turmas, mas em uma, especialmente, sente-se desmotivado. As situações se repetem: sala com muito ruído, alunos em pé, gritando, ninguém se escuta. O professor já tentou de tudo: anda pela sala, pede aos alunos que estão em pé para se sentarem, diz que está cansado, refaz combinados, encaminha para a coordenação, envia comunicado às famílias… Mas nada parece funcionar. Lendo esse relato, que tipos de problema de convivência você diria que o professor Valdeck Francisco tem enfrentado?`,
+        options: ["Indisciplina, incivilidade e transgressão", "Bullying/Cyberbullying, violência", "Violência, transgressão, bullying", "Bullying, indisciplina, violência"],
+        answer: 0
+      },
+      {
+        question: `22. Algumas meninas se incomodam com a beleza de Ana Beatriz. Além disso, ela tira boas notas e é frequentemente elogiada pelos professores, o que irrita as meninas. Um dia, durante o intervalo das aulas, as meninas agridem Ana Beatriz com palavras e, enquanto algumas a seguram com força (o que deixa um hematoma em seu braço), outras cortam uma mecha grande de seus cabelos e rasgam seus materiais. É um exemplo de:` ,
+        options: ["Incivilidade", "Violência", "Transgressão", "Bullying"],
+        answer: 3
+      },
+      {
+        question: `23. A professora Ana Karla solicitou aos estudantes que fizessem a leitura prévia de um texto, com uma semana de antecedência, para que pudessem apresentar os principais pontos abordados pelo autor. Entretanto, um grupo de alunos não leu o texto e se manteve reunido, rindo e provocando outros alunos durante a aula. É um exemplo de:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Transgressão"],
+        answer: 0
+      },
+      {
+        question: `24. Algumas alunas da classe de Ana Rita criaram uma página no Instagram para postar “memes” em que ela aparece com vários garotos. É um exemplo de:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Cyberbullying"],
+        answer: 3
+      },
+      {
+        question: `25. Mesmo sabendo que não faz parte do uniforme escolar, Helder vem vestido frequentemente com a camiseta de seu time, o que gera várias anotações no registro da escola. É um exemplo de:` ,
+        options: ["Incivilidade", "Violência", "Transgressão", "Bullying"],
+        answer: 2
+      },
+      {
+        question: `26. Diariamente, a professora Wanessa Camargo entra na sala dos professores e diz “bom dia”, porém, mesmo com muitos na sala, ninguém responde. É um exemplo de:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Cyberbullying"],
+        answer: 1
+      },
+      {
+        question: `27. A convivência escolar acontece quando alunos, professores e funcionários:` ,
+        options: ["Ficam sempre separados uns dos outros.", "Vivem juntos no ambiente escolar, respeitando e colaborando entre si", "Apenas estudam sem conversar com ninguém.", "Ignoram as regras da escola."],
+        answer: 1
+      },
+      {
+        question: `28. Qual atitude contribui para uma boa convivência na escola?` ,
+        options: ["Respeitar colegas e professores.", "Fazer brincadeiras ofensivas.", "Gritar durante a aula.", "Desrespeitar as regras."],
+        answer: 0
+      },
+      {
+        question: `29. Quando um aluno agride fisicamente outro colega, esse comportamento é considerado:` ,
+        options: ["Indisciplina", "Violência", "Amizade", "Cooperação"],
+        answer: 1
+      },
+      {
+        question: `30. Fazer brincadeiras repetidas que humilham um colega caracteriza:` ,
+        options: ["Bullying", "Cooperação", "Amizade", "Respeito"],
+        answer: 0
+      },
+      {
+        question: `31. Seguir as regras da escola é importante porque:` ,
+        options: ["Ajuda a manter a organização e o respeito entre todos.", "Faz a escola ficar mais difícil.", "Não tem importância.", "Serve apenas para os professores."],
+        answer: 0
+      },
+      {
+        question: `32. Chamar colegas por apelidos ofensivos é um exemplo de:` ,
+        options: ["Respeito", "Boa convivência", "Incivilidade", "Cooperação"],
+        answer: 2
+      },
+      {
+        question: `33. Quando um aluno ajuda outro colega com dificuldade em uma atividade, ele demonstra:` ,
+        options: ["Egoísmo", "Solidariedade", "Indisciplina", "Desrespeito"],
+        answer: 1
+      },
+      {
+        question: `34. Uma escola com boa convivência é aquela em que:` ,
+        options: ["Existem brigas todos os dias.", "As pessoas se respeitam e dialogam para resolver problemas.", "Ninguém segue regras.", "Os alunos não participam das atividades."],
+        answer: 1
+      },
+      {
+        question: `35. Durante a explicação do professor, alguns alunos começam a conversar alto, mexer no celular e não prestam atenção na aula, atrapalhando os colegas. Esse comportamento é um exemplo de:` ,
+        options: ["Violência", "Indisciplina", "Bullying", "Incivilidade"],
+        answer: 1
+      },
+      {
+        question: `36. Ao entrar na sala, a professora cumprimenta os alunos com “bom dia”, mas alguns estudantes respondem com ironia e risadas. Esse comportamento pode ser classificado como:` ,
+        options: ["Incivilidade", "Violência", "Transgressão", "Bullying"],
+        answer: 0
+      },
+      {
+        question: `37. Durante o recreio, dois alunos começam a discutir e acabam trocando empurrões e socos. Essa situação caracteriza:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Transgressão"],
+        answer: 2
+      },
+      {
+        question: `38. Um aluno sai da sala de aula sem autorização do professor e vai para o pátio da escola, desrespeitando as regras estabelecidas. Esse comportamento é considerado:` ,
+        options: ["Bullying", "Transgressão", "Violência", "Incivilidade"],
+        answer: 1
+      },
+      {
+        question: `39. Um grupo de alunos cria um perfil em uma rede social para postar mensagens ofensivas e imagens ridicularizando um colega da turma. Essa situação é um exemplo de:` ,
+        options: ["Indisciplina", "Incivilidade", "Violência", "Bullying/Cyberbullying"],
+        answer: 3
+      },
+      {
+        question: `40. Um aluno costuma chamar um colega por apelidos ofensivos todos os dias na frente da turma, fazendo com que ele se sinta humilhado. Essa situação caracteriza:` ,
+        options: ["Bullying", "Transgressão", "Indisciplina", "Incivilidade"],
+        answer: 0
       }
     ];
 
@@ -472,6 +283,7 @@
     const totalEl = document.getElementById("total");
 
     const restartBtn = document.getElementById("restart-btn");
+
     const questionCounterEl = document.getElementById("question-counter");
 
     let currentQuestion = 0;
@@ -480,76 +292,153 @@
     totalEl.textContent = questions.length;
 
     function loadQuestion() {
+
       const q = questions[currentQuestion];
+
       questionEl.textContent = q.question;
+
       optionsEl.innerHTML = "";
 
       q.options.forEach((opt, i) => {
+
         const li = document.createElement("li");
+
         li.textContent = opt;
+
         li.classList.add("option");
+
         li.addEventListener("click", () => selectOption(i));
+
         optionsEl.appendChild(li);
+
       });
 
       nextBtn.style.display = "none";
+
       updateProgress();
-      questionCounterEl.textContent = `Questão ${currentQuestion + 1} de ${questions.length}`;
+
+      questionCounterEl.textContent =
+        `Questão ${currentQuestion + 1} de ${questions.length}`;
+
     }
 
     function selectOption(index) {
+
       const q = questions[currentQuestion];
+
       const allOptions = document.querySelectorAll(".option");
 
       allOptions.forEach((opt, i) => {
+
         if (i === q.answer) opt.classList.add("correct");
+
         if (i === index && i !== q.answer) opt.classList.add("wrong");
+
         opt.style.pointerEvents = "none";
+
       });
 
       if (index === q.answer) score++;
+
       nextBtn.style.display = "block";
+
     }
 
     nextBtn.addEventListener("click", () => {
+
       currentQuestion++;
-      if (currentQuestion < questions.length) loadQuestion();
-      else showResult();
+
+      if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+      } else {
+
+        showResult();
+
+      }
+
     });
 
     function updateProgress() {
+
       const pct = ((currentQuestion) / questions.length) * 100;
+
       progressBar.style.width = pct + "%";
+
     }
 
     function showResult() {
+
       quizBox.classList.add("hidden");
+
       resultBox.classList.remove("hidden");
 
       scoreEl.textContent = score;
+
       const percent = Math.round((score / questions.length) * 100);
 
       const resultBar = document.getElementById("result-bar");
+
       const resultPercent = document.getElementById("result-percent");
+
       const resultMessage = document.getElementById("result-message");
 
       resultBar.style.width = percent + "%";
+
       resultPercent.textContent = percent + "% de aproveitamento";
 
-      let msg = percent >= 70 ? "👏 Muito bom!" : "📚 Revise o conteúdo.";
+      let msg = "";
+
+      if (percent >= 90) {
+
+        msg = "🏆 Excelente! Você domina o conteúdo!";
+        resultBar.style.background = "#16a34a";
+
+      }
+
+      else if (percent >= 70) {
+
+        msg = "👏 Muito bom! Continue assim!";
+        resultBar.style.background = "#22c55e";
+
+      }
+
+      else if (percent >= 50) {
+
+        msg = "🙂 Resultado razoável. Dá para melhorar!";
+        resultBar.style.background = "#f59e0b";
+
+      }
+
+      else {
+
+        msg = "📚 Você precisa revisar o conteúdo.";
+        resultBar.style.background = "#dc2626";
+
+      }
+
       resultMessage.textContent = msg;
+
+      progressBar.style.width = "100%";
+
     }
 
     restartBtn.addEventListener("click", () => {
+
       score = 0;
+
       currentQuestion = 0;
+
       resultBox.classList.add("hidden");
+
       quizBox.classList.remove("hidden");
+
       loadQuestion();
+
     });
 
     loadQuestion();
+
   </script>
 </body>
-
-</html>
